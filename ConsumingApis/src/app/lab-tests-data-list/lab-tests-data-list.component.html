@@ -1,0 +1,16 @@
+<table>
+    <thead>
+      <tr>
+        <th>Lab Test Name</th>
+        <th>Lab Test Code</th>
+        <th>Lab Sequence</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let labTest of labTests">
+        <td>{{ labTest.LabTestName }}</td>
+        <td>{{ labTest.LabTestCode }}</td>
+        <td>{{labTest.LabSequence}}</td>
+      </tr>
+    </tbody>
+  </table>

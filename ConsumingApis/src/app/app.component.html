@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>{{title}}</h2>
+  <hr>
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+  <ul class="navbar-nav">
+
+    <li class="nav-item"*ngFor="let menu of  menuItems">
+      <a [routerLink]="menu.routerLink" class="btn btn-primary active spaced-button" role="button" routerLinkActive="active">{{ menu.value }}</a>
+  </li>
+  </ul>
+  </nav>
+  <router-outlet></router-outlet>
+
+  </div>
