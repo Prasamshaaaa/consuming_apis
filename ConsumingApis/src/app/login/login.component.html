@@ -1,20 +1,21 @@
 
-
+<div class = "box">
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div>
       <label for="username">Username:</label>
-      <input type="text" id="username" formControlName="username">
+      <input type="text" id="username" formControlName="username" (keyup.enter)="HandleEnterEvent('password')">
       <div *ngIf="loginForm.get('username').touched && loginForm.get('username').errors?.required">
         Username is required.
       </div>
     </div>
     <div>
       <label for="password">Password:</label>
-      <input type="password" id="password" formControlName="password">
+      <input type="password" id="password" formControlName="password" (keyup.enter)="HandleEnterEvent('login')">
       <div *ngIf="loginForm.get('password').touched && loginForm.get('password').errors?.required">
         Password is required.
       </div>
     </div>
-    <button type="submit" [disabled]="!loginForm.valid">Login</button>
   </form>
+  <button type="submit" [disabled]="!loginForm.valid" id="login" class="login-button" (click)="onSubmit()">Login</button>
   
+</div>

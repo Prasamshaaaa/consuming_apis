@@ -1,29 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiServiceService } from '../api-service.service';
 import { LabTest, LabTestResult } from '../model/lab-test.model';
+import { ApiResponse } from '../shared-kernel/api-response';
+import { ENUM_APIResponseStatus, ENUM_LocaStorageKeys } from '../shared-kernel/shared-enums';
+
 
 @Component({
   selector: 'app-lab-tests-data-list',
   templateUrl: './lab-tests-data-list.component.html',
   styleUrls: ['./lab-tests-data-list.component.css']
+
 })
 export class LabTestsDataListComponent implements OnInit {
+
   labTests: LabTest[] = [];
+
   constructor(private apiService: ApiServiceService) { }
 
   ngOnInit() {
-    //Setting the token in local storage 
-  
-    // Retrieving the token from local storage
-  
+
     // Making a request to the API endpoint with the token
     this.apiService.getLabTestData().subscribe(
-      (data: LabTestResult) => {
-        if (data && data.Results) {
-          this.labTests = data.Results;
-          
-          // Store the data in local storage
-          localStorage.setItem('labTestsData', JSON.stringify(this.labTests));
+      (res: ApiResponse<LabTest[]>) => {
+        if (res && res.Status === ENUM_APIResponseStatus.Success) {
+          if (res.Results) {
+            this.labTests = res.Results;
+            // Store the data in local storage
+            localStorage.setItem(ENUM_LocaStorageKeys.LabTests, JSON.stringify(this.labTests));
+          } else {
+            console.info(`There is no LabTests Available`);
+          }
+        } else {
+          console.error(`Error fetching the data ${res}`);
         }
       },
       (error) => {

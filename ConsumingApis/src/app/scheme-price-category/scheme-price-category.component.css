@@ -1,0 +1,19 @@
+.padding-10 {
+    padding: 10px;
+}
+
+.bottom-right {
+    align-self: flex-end;
+    margin-bottom: 10px;
+    /* Adjust as needed */
+    margin-right: 10px;
+    /* Adjust as needed */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50vh;
+    /* Ensure the container takes the full viewport height */
+}

@@ -1,0 +1,11 @@
+<div class="overlay">
+    <div class="popup-form">
+        <span class="close-btn" (click)="ClosePopup()">X</span>
+        <h2>Add New Specimen</h2>
+        <form (submit)="SubmitData()">
+            <label for="newSpecimen">Name:</label>
+            <input type="text" id="newSpecimen" name="newSpecimen" [(ngModel)]="NewSpecimen" required>
+            <button type="submit">Add Specimen</button>
+        </form>
+    </div>
+</div>

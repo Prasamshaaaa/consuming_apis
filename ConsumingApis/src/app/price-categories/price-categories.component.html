@@ -1,0 +1,16 @@
+<div>
+    <form [formGroup]="PriceCategoryForm">
+
+        <label for="id_priceCategories" style="margin-right: 10px;">PriceCategory</label>
+        <select name="priceCategories" id="id_priceCategories" formControlName="PriceCategoryId">
+            <option value="">--Select PriceCategory--</option>
+
+            <option *ngFor="let priceCategory of priceCategories" [value]="priceCategory.PriceCategoryId">
+                {{priceCategory.PriceCategoryName}}
+            </option>
+
+        </select>
+
+    </form>
+
+</div>

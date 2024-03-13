@@ -1,0 +1,26 @@
+<cdk-virtual-scroll-viewport itemSize="20" class="example-viewport">
+  <table>
+    <thead>
+      <tr>
+        <th>IsSelected</th>
+        <th>Name</th>
+        <th>Specimen Id</th>
+        <th>
+          <button class="add-button" (click)="openDialog()">ADD</button>
+
+        </th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *cdkVirtualFor="let labdata of labSpecimenData" class="example-item">
+        <td>
+          <input type="checkbox" [(ngModel)]="labdata.IsSelected">
+          {{ labdata.IsSelected }}
+        </td>
+        <td>{{ labdata.Name }}</td>
+        <td>{{ labdata.SpecimenId }}</td>
+      </tr>
+    </tbody>
+  </table>
+</cdk-virtual-scroll-viewport>

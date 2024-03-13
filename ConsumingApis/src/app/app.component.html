@@ -2,6 +2,12 @@
   <h2>{{title}}</h2>
   <hr>
 
+    <!-- Show login component when the user is not logged in -->
+<!-- <div *ngIf ="!isLoggedIn()">
+  <app-login></app-login>
+</div> -->
+
+<!-- <div *ngIf="isLoggedIn()">
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 
   <ul class="navbar-nav">
@@ -9,8 +15,15 @@
     <li class="nav-item"*ngFor="let menu of  menuItems">
       <a [routerLink]="menu.routerLink" class="btn btn-primary active spaced-button" role="button" routerLinkActive="active">{{ menu.value }}</a>
   </li>
+
+  <li class="nav-item">
+    <a class="btn btn-primary active spaced-button" (click)="handleLogout()">Logout</a>
+  </li>
   </ul>
+
   </nav>
-  <router-outlet></router-outlet>
+  
+</div> -->
+<router-outlet></router-outlet>
 
   </div>

@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="header">
+        <h3>Person 2</h3>
+
+    </div>
+
+    <div>
+        <table style="width: 100%;">
+
+            <tr *ngFor="let chat of messages" class="chat-row">
+                <td *ngIf="chat.from === 'chat2'" class="chat-message chat2 hover1">{{ chat.message }}</td>
+                <td *ngIf="chat.from === 'chat1'" class="chat-message chat1 hover2" colspan="2">{{ chat.message }}</td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div class="input-area">
+        <input type="text" [(ngModel)]="message" id="chat2" (keyup.enter)="HandleEnterEvent('send')">
+        <button (click)="sendMessage()" id="send">Send</button>
+    </div>
+</div>

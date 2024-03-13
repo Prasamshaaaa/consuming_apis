@@ -1,0 +1,16 @@
+<div>
+    <form [formGroup]="BillingCategoryForm">
+
+        <label for="id_billingcreditorganizations" style="margin-right: 10px;">Credit Organization</label>
+        <select name="priceCategories" id="id_billingcreditorganizations" formControlName="OrganizationId">
+            <option value="">--Select CreditOrganization--</option>
+
+            <option *ngFor="let data of billingCreditOrganization" [value]="data.OrganizationId">
+                {{data.DisplayName}}
+            </option>
+
+        </select>
+
+    </form>
+
+</div>

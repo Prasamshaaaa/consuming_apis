@@ -14,10 +14,13 @@ export class MenuItems {
 export class ThisIsAClassThatGivesMenuItems {
     static getMenuItems(): Array<MenuItems> {
         const menuItems = new Array<MenuItems>();
-        menuItems.push(new MenuItems('login', 'Login', 1));
-        menuItems.push(new MenuItems('labtestdatalistcomponent', 'Lab Tests Data', 2));
+        // menuItems.push(new MenuItems('login', 'Login', 1));
+        menuItems.push(new MenuItems('labtestdatalistcomponent', 'Lab Tests Data', 1));
+        menuItems.push(new MenuItems('labspecimencomponent', 'Lab Specimen Component', 2));
+        menuItems.push(new MenuItems('schemepricecategorycomponent', 'Scheme Price Category ', 3));
+        menuItems.push(new MenuItems('chat', 'Chat Bot ', 4));
 
-       
+
         //You can sort menuItems before returning them.
         return menuItems;
     }

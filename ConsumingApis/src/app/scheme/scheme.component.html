@@ -1,0 +1,11 @@
+<!-- <div class="row" *ngIf="schemes && priceCategories"> -->
+<div>
+    <form [formGroup]="SchemeForm">
+        <label for="id_schemes" style="margin-right: 10px;">Scheme</label>
+        <select name="schemes" id="id_schemes" formControlName="SchemeId" (change)="onSchemeSelected($event)">
+            <option value="">--select--</option>
+            <option *ngFor="let scheme of schemes" [value]="scheme.SchemeId">{{scheme.SchemeName}}</option>
+        </select>
+    </form>
+
+</div>

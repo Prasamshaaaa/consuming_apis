@@ -1,17 +1,28 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { Observable, Subject } from 'rxjs';
 import { LoginRequest } from './model/login';
 import { environment } from 'src/environments/environment';
+import { ApiResponse } from './shared-kernel/api-response';
+import { LabTest } from './model/lab-test.model';
+import { LabSpecimenData } from './model/lab-specimens';
+import { PriceCategory, Schemes, BillingCreditOrganizations } from './model/billingmaster';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiServiceService {
 
+
+  // For LabSpecimens
+  public options = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' })
+  };
+
   private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
   constructor(private http: HttpClient) { }
+
 
   getLoginJwtToken(loginData: LoginRequest): Observable<any> {
     const url = `${environment.baseUrl}Account/GetLoginJwtToken`;
@@ -19,17 +30,54 @@ export class ApiServiceService {
   }
 
   // Method to make a request to the API endpoint with the token
-  getLabTestData(): Observable<any> {
+  getLabTestData(): Observable<ApiResponse<LabTest[]>> {
     const url = `${environment.baseUrl}Lab/LabTests`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
 
+    // sends an HTTP GET request to the specified URL (url) with custom headers (headers)
+
+    return this.http.get<ApiResponse<LabTest[]>>(url, { headers });
+  }
+
+  // For Post LabSpecimens
+  postLabSpecimensData(specimen: string): Observable<ApiResponse<any>> {
+    const url = `${environment.baseUrl}LabSetting/LabSpecimen`;
+    return this.http.post<ApiResponse<any>>(url, specimen, this.options);
+  }
+
+  getLabSpecimensData(): Observable<ApiResponse<Array<LabSpecimenData>>> {
+    const url = `${environment.baseUrl}Lab/LabSpecimens`;
+
 
     // sends an HTTP GET request to the specified URL (url) with custom headers (headers)
 
-    return this.http.get(url, { headers });
+    return this.http.get<ApiResponse<Array<LabSpecimenData>>>(url, this.options);
+  }
+
+  getBillingSchemes(serviceBillingContext: string): Observable<ApiResponse<Schemes[]>> {
+    const url = `${environment.baseUrl}BillingMaster/Schemes`;
+
+    // Create HTTP parameters with the serviceBillingContext query parameter
+    const params = new HttpParams().set('serviceBillingContext', serviceBillingContext);
+
+    return this.http.get<ApiResponse<Schemes[]>>(url, { headers: this.headers, params });
+  }
+
+  getPriceCategories(): Observable<ApiResponse<PriceCategory[]>> {
+    const url = `${environment.baseUrl}BillingMaster/PriceCategories`;
+
+    return this.http.get<ApiResponse<PriceCategory[]>>(url, { headers: this.headers });
+  }
+
+  getBillingCreditOrganizations(): Observable<ApiResponse<BillingCreditOrganizations[]>> {
+    const url = `${environment.baseUrl}Billing/BillingCreditOrganizations`;
+
+    return this.http.get<ApiResponse<BillingCreditOrganizations[]>>(url, { headers: this.headers });
 
   }
 
 }
+
+

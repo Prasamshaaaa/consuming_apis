@@ -1,0 +1,43 @@
+.container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: inline-block;
+    height: 500px;
+    position: absolute;
+    left: 0;
+    width: 300px;
+    margin-left: 430px;
+    margin-top: 20px;
+    background-color: wheat;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.chat-row {
+    border-bottom: 1px solid #ddd;
+}
+
+.chat-message {
+    padding: 10px;
+}
+
+.chat1 {
+    background-color: #e1f5fe;
+}
+
+.chat2 {
+    background-color: #f0f4c3;
+    text-align: right;
+}
+
+.hover1:hover {
+    background-color: #aed9fb;
+}
+
+.hover2:hover {
+    background-color: #d9fbbf;
+}

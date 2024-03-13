@@ -3,10 +3,20 @@ form {
     width: 300px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-  }
+/*     border: 1px solid #ccc;*/
+/*     border-radius: 5px;*/
+/*     background-color: #f9f9f9;*/ 
+ }
+
+ .box {
+  width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   background-color: #f9f9f9;
+ }
+ 
   
   /* Style the form fields */
   form div {
@@ -42,7 +52,9 @@ form {
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    width: 100%;
+    width: 25%;
+    margin-top: 20px;
+    margin-left: 120px;
   }
   
   button[type="submit"]:hover {
@@ -53,4 +65,7 @@ form {
     background-color: #cccccc; /* Grey */
     cursor: not-allowed;
   }
+
+
+  
   

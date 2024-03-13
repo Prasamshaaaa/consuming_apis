@@ -1,3 +1,4 @@
+<cdk-virtual-scroll-viewport itemSize="20" class="example-viewport">
 <table>
     <thead>
       <tr>
@@ -7,10 +8,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let labTest of labTests">
+      <tr *cdkVirtualFor="let labTest of labTests" class="example-item">
         <td>{{ labTest.LabTestName }}</td>
         <td>{{ labTest.LabTestCode }}</td>
-        <td>{{labTest.LabSequence}}</td>
+        <td>{{ labTest.LabSequence }}</td>
       </tr>
     </tbody>
-  </table>
+</table>
+</cdk-virtual-scroll-viewport>
