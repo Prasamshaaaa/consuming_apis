@@ -4,12 +4,18 @@
 
     </div>
 
-    <div>
+    <div class="messages">
         <table style="width: 100%;">
 
             <tr *ngFor="let chat of messages" class="chat-row">
-                <td *ngIf="chat.from === 'chat1'" class="chat-message chat1 hover1">{{ chat.message }}</td>
-                <td *ngIf="chat.from === 'chat2'" class="chat-message chat2 hover2" colspan="2">{{ chat.message }}</td>
+                <td *ngIf="chat.from === 'chat1'" class="chat-message chat1 hover1">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3541/3541871.png" alt="avatar" width="24px;">
+                    <span class="msg-bg-chat1">{{ chat.message }}</span>
+                </td>
+                <td *ngIf="chat.from === 'chat2'" class="chat-message chat2 hover2" colspan="2">
+                    <span class="msg-bg-chat2"> {{ chat.message }}</span>
+                    <img src="https://cdn-icons-png.flaticon.com/512/3541/3541871.png" alt="avatar" width="24px;">
+                </td>
             </tr>
 
         </table>

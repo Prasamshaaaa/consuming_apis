@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
       this.apiService.getLoginJwtToken(loginData).subscribe(
         (response) => {
           const token = response.loginJwtToken;
+          console.log('Received JWT token:', token);
 
           // Use AuthService to handle login and store the token
           this.authService.login(token);

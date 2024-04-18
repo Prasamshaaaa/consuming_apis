@@ -25,6 +25,7 @@ import { BillingCreditOrganizationsComponent } from './billing-credit-organizati
 import { Chat1Component } from './chat1/chat1.component';
 import { Chat2Component } from './chat2/chat2.component';
 import { ChatComponent } from './chat/chat.component';
+import { UpdateLabTestsComponent } from './update-lab-tests/update-lab-tests.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ChatComponent } from './chat/chat.component';
     BillingCreditOrganizationsComponent,
     Chat1Component,
     Chat2Component,
-    ChatComponent
+    ChatComponent,
+    UpdateLabTestsComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,13 +63,13 @@ import { ChatComponent } from './chat/chat.component';
       multi: true,
     },
     // For Dialog Box
-    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}},
+    { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: false } },
     AuthService, AuthGuard
   ],
   bootstrap: [AppComponent],
-  
+
   // For Dialog Box
-  entryComponents: [AddSpecimentDialogComponent],
+  entryComponents: [AddSpecimentDialogComponent, UpdateLabTestsComponent],
 
 })
 export class AppModule { }

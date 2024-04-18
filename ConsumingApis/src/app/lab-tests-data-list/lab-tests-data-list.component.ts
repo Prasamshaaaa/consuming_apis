@@ -3,7 +3,8 @@ import { ApiServiceService } from '../api-service.service';
 import { LabTest, LabTestResult } from '../model/lab-test.model';
 import { ApiResponse } from '../shared-kernel/api-response';
 import { ENUM_APIResponseStatus, ENUM_LocaStorageKeys } from '../shared-kernel/shared-enums';
-
+import { UpdateLabTestsComponent } from '../update-lab-tests/update-lab-tests.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-lab-tests-data-list',
@@ -15,8 +16,20 @@ export class LabTestsDataListComponent implements OnInit {
 
   labTests: LabTest[] = [];
 
-  constructor(private apiService: ApiServiceService) { }
+  constructor(private apiService: ApiServiceService, public dialog: MatDialog) { }
+  openUpdateLabTest(labTest: any) {
+    const dialogRef = this.dialog.open(UpdateLabTestsComponent, {
+      width: '95%',
+      height: '90%',
+      data: {
+        labTest: labTest
+      } //passing the entire labTest data to the UpdateLabTestsComponent
 
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+    });
+  }
   ngOnInit() {
 
     // Making a request to the API endpoint with the token

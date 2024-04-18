@@ -1,0 +1,47 @@
+.red-asterisk {
+    color: red;
+}
+
+.close-btn {
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    margin-left: 1250px;
+
+}
+
+.custom-textarea {
+    width: 100%;
+    height: 100px;
+}
+
+.boundary {
+    border: apx solid #ccc;
+    width: 90% !important;
+    padding: 10px;
+}
+
+.box {
+    width: 90%;
+    margin: 0 auto;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ccc;
+}
+
+.tablehead {
+    background-color: #bbb;
+    width: 90%;
+
+}
+
+.boundary .header-box {
+    padding: auto;
+    border: 1px solid #aaa;
+    background-color: #ddd;
+}
+
+.boundary .add-component-table thead {
+    background-color: #ccc;
+}

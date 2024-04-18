@@ -2,7 +2,7 @@
     border: 1px solid #ccc;
     padding: 10px;
     display: inline-block;
-    height: 500px;
+    height: 400px;
     width: 300px;
     position: absolute;
     right: 0;
@@ -45,4 +45,17 @@
 
 .input-area {
     display: flex;
+}
+
+.input-area input {
+    width: 80%;
+}
+
+.input-area button {
+    width: 20%;
+}
+
+.messages {
+    height: 80%;
+    overflow: auto;
 }

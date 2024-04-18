@@ -1,4 +1,4 @@
-export class ApiResponse<T>{
+export class ApiResponse<T> {
     Status: string = "";
     Results?: T;
     ErrorMessage: string = "";

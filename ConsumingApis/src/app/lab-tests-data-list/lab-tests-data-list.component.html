@@ -1,10 +1,11 @@
 <cdk-virtual-scroll-viewport itemSize="20" class="example-viewport">
-<table>
+  <table>
     <thead>
       <tr>
         <th>Lab Test Name</th>
         <th>Lab Test Code</th>
         <th>Lab Sequence</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -12,7 +13,13 @@
         <td>{{ labTest.LabTestName }}</td>
         <td>{{ labTest.LabTestCode }}</td>
         <td>{{ labTest.LabSequence }}</td>
+        <td>
+          <ng-container>
+            <button style="margin-right: 10px;background-color: green;"
+              (click)="openUpdateLabTest(labTest)">Edit</button>
+          </ng-container>
+        </td>
       </tr>
     </tbody>
-</table>
+  </table>
 </cdk-virtual-scroll-viewport>

@@ -2,7 +2,7 @@
     border: 1px solid #ccc;
     padding: 10px;
     display: inline-block;
-    height: 500px;
+    height: 400px;
     position: absolute;
     left: 0;
     width: 300px;
@@ -17,9 +17,9 @@
     margin-top: 10px;
 }
 
-.chat-row {
+/* .chat-row {
     border-bottom: 1px solid #ddd;
-}
+} */
 
 .chat-message {
     padding: 10px;
@@ -40,4 +40,31 @@
 
 .hover2:hover {
     background-color: #d9fbbf;
+}
+
+.messages {
+    height: 80%;
+    overflow: auto;
+
+}
+
+.input-area {
+    display: flex;
+}
+
+.input-area input {
+    width: 80%;
+}
+
+.input-area button {
+    width: 20%;
+}
+
+.msg-bg-chat1 {
+    background-color: #e1f5fe;
+    ;
+}
+
+.msg-bg-chat1 {
+    background-color: #f0f4c3;
 }

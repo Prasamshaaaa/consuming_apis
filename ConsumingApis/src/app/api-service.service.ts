@@ -7,19 +7,20 @@ import { ApiResponse } from './shared-kernel/api-response';
 import { LabTest } from './model/lab-test.model';
 import { LabSpecimenData } from './model/lab-specimens';
 import { PriceCategory, Schemes, BillingCreditOrganizations } from './model/billingmaster';
+import { ReportTemplates } from './model/lab-test.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiServiceService {
 
-
   // For LabSpecimens
   public options = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' })
+    headers: new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' })  // Commonly used when submitting HTML form data to a server.
   };
 
-  private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+  private headers = new HttpHeaders({ 'Content-Type': 'application/json' });  // indicates that the content being sent or received is in JSON 
+  baseUrl: any;
 
   constructor(private http: HttpClient) { }
 
@@ -31,7 +32,7 @@ export class ApiServiceService {
 
   // Method to make a request to the API endpoint with the token
   getLabTestData(): Observable<ApiResponse<LabTest[]>> {
-    const url = `${environment.baseUrl}Lab/LabTests`;
+    const url = `${environment.baseUrl}LabSetting/LabTests`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
@@ -77,6 +78,34 @@ export class ApiServiceService {
     return this.http.get<ApiResponse<BillingCreditOrganizations[]>>(url, { headers: this.headers });
 
   }
+
+  getReportTemplates(): Observable<ApiResponse<ReportTemplates>> {
+    const url = `${environment.baseUrl}LabSetting/ReportTemplates`;
+    return this.http.get<ApiResponse<ReportTemplates>>(url, { headers: this.headers });
+  }
+
+  getLabLookUpList(): Observable<any> {
+    const url = `${environment.baseUrl}LabSetting/LabLookupList`;
+    return this.http.get<any>(url, { headers: this.headers });
+  }
+
+  getLabTestComponents(): Observable<any> {
+    const url = `${environment.baseUrl}LabSetting/LabTestComponents`;
+    return this.http.get<any>(url, this.options);
+  }
+
+  getLabCategories(): Observable<any> {
+    const url = `${environment.baseUrl}Lab/LabCategories`;
+    return this.http.get<any>(url, { headers: this.headers });
+  }
+
+  updateLabTest(data): Observable<any> {
+    const finalData = JSON.stringify(data);
+    const url = `${environment.baseUrl}LabSetting/LabTest`;
+    return this.http.put<any>(url, finalData, this.options);
+  }
+
+
 
 }
 

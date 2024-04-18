@@ -1,0 +1,417 @@
+<div class="boundary-box">
+
+    <span class="close-btn" (click)="closePopup()">x</span>
+    <h3>Update Lab Test</h3>
+    <hr>
+
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    <p>Lab Test Name<span class="red-asterisk">*</span>:</p>
+                </div>
+                <div class="col">
+                    <input type="text" name="lab_test_name" id="lab_test_name" [(ngModel)]="UpdateTest.LabTestName">
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    <p>Lab Test Code<span class="red-asterisk">*</span>:</p>
+                </div>
+
+                <div class="col">
+                    <input type="text" name="lab_test_code" id="lab_test_code" [(ngModel)]="UpdateTest.LabTestCode">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="div row">
+                <div class="col">
+                    <p>Reporting Name:</p>
+
+                </div>
+                <div class="div col">
+                    <input type="text" name="reporting_name" id="reporting_name" [(ngModel)]="UpdateTest.LabTestName">
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="div row">
+                <div class="col">
+                    <p>Report Template Name<span class="red-asterisk">*</span>:</p>
+                </div>
+                <div class="div col">
+
+                    <select [(ngModel)]="SelectedReportTemplate" name="reportTemplatesData" id="reportTemplatesData"
+                        (change)=" UpdateReportTemplateName()">
+                        <option *ngFor="let template of reportTemplatesData" [ngValue]="template">
+                            {{template.ReportTemplateName}}
+                        </option>
+                    </select>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    <p>Lab Category<span class="red-asterisk">*</span>:</p>
+                </div>
+
+                <div class="col">
+                    <select [(ngModel)]="SelectedLabCategories" name="labCategoriesData" id="labCategoriesData"
+                        (change)="UpdateLabCategory()">
+                        <option *ngFor="let labCategory of labCategoriesData" [ngValue]="labCategory">
+                            {{labCategory.TestCategoryName}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <p>Run No.Type:</p>
+                        </div>
+
+                        <div class="col-md-8">
+                            <select [(ngModel)]="UpdateTest.TemplateType" name="reportTemplatesData"
+                                id="reportTemplatesData">
+                                <option>normal</option>
+                                <option>cyto</option>
+                                <option>histo</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p>Display Sequence:</p>
+                                </div>
+
+
+                                <div class="col-md-8">
+                                    <input type="text" name="lab_test_name" id="lab_test_name"
+                                        [(ngModel)]="UpdateTest.LabSequence">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="row">
+        <div class="col">
+            <div class="row">
+                <div class=" col">
+                    <p>Select Specimen(s)<span class="red-asterisk">*</span>:</p>
+                </div>
+                <div class=" col">
+                    <select [(ngModel)]=" SelectedLabSpecimen " name=" labSpecimensData" id=" labSpecimensData"
+                        (change)="UpdateSpecimens()">
+                        <option *ngFor="let specimen of labSpecimensData" [ngValue]="specimen">
+                            {{specimen.Name}}
+                        </option>
+                    </select>
+                    <div>
+                        <div *ngFor="let sp of Specimens">
+                            <span>{{sp}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class=" col">
+            <div class="row">
+
+                <div class="col-md-0">
+                    <p> </p>
+
+                </div>
+
+                <div class="col-md-12">
+                    <p>Interpretation</p>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col">
+
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <input type="checkbox" id="isSMSApplicable" name="isSMSApplicable"
+                                [(ngModel)]="UpdateTest.IsSMSApplicable" style="margin-right: 5px;">
+                        </div>
+                        <div class="col-md-9">
+                            <label for="isSMSApplicable">Is SMS Applicable?</label>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+
+                        <div class="col-md-3">
+                            <input type="checkbox" id="taxApplicable" name="taxApplicable"
+                                [(ngModel)]="UpdateTest.IsTaxApplicable" style="margin-right: 5px;">
+
+                        </div>
+                        <div class="col-md-9">
+                            <label for="taxApplicable"> Is Tax Applicable?</label>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <input type="checkbox" id="isLISApplicable" name="isLISApplicable"
+                                [(ngModel)]="UpdateTest.IsLISApplicable" style="margin-right: 5px;">
+
+                        </div>
+                        <div class="col-md-9">
+                            <label for="isLISApplicable">Is LIS Applicable?</label>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <input type="checkbox" id="isOutSourcedTest" name="isOutSourcedTest"
+                                [(ngModel)]="UpdateTest.IsOutsourceTest" style="margin-right: 5px;">
+
+                        </div>
+
+                        <div class="col-md-9">
+                            <label for="isOutSourcedTest">Is Outsourced Test?</label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col">
+                    <div class="row">
+                        <div class="col-md-3">
+
+                            <input type="checkbox" id="isValidForReporting" name="isValidForReporting"
+                                [(ngModel)]="UpdateTest.IsValidForReporting" style="margin-right: 5px;">
+
+                        </div>
+                        <div class="col-md-9">
+                            <label for="isValidForReporting">Is Valid for Repoting?</label>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-3">
+
+                            <input type="checkbox" id="hasNegativeResults" name="hasNegativeResults"
+                                [(ngModel)]="UpdateTest.HasNegativeResults" style="margin-right: 5px;">
+
+                        </div>
+
+                        <div class="col-md-9">
+
+                            <label for="hasNegativeResults">Has Negative Results</label>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col">
+            <div class="row">
+
+                <div class="col">
+                    <textarea name="interpretation" id="interpretation" class="custom-textarea"
+                        [(ngModel)]="UpdateTest.Interpretation"></textarea>
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+    <hr>
+
+    <div class="boundary">
+        <div class="row">
+            <div class="header-box">
+                <h4>Select Components For this Lab Test</h4>
+            </div>
+        </div>
+        <div class="row">
+            <table class="bordered add-component-table">
+                <thead>
+                    <tr>
+                        <th width="5%"></th>
+                        <th width="30%" scope='col'>ComponentName</th>
+                        <th scope='col'>Unit</th>
+                        <th scope='col'>Value Type </th>
+                        <th scope='col'>Range</th>
+                        <th scope='col'>Disp. Sequence</th>
+                        <th scope='col'>indent</th>
+                        <th scope='col'>Group Val.</th>
+                        <th scope='col'>Sheet</th>
+                        <th scope='col'>Active</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let map of UpdateTest.LabTestComponentMap;let i = index">
+                        <td width="5%">
+                            <div>
+                                <button type="button" id="add" class="btn btn-primary" style="margin-top: 10px;"
+                                    (click)="addRow(i)">+</button>
+                            </div>
+
+                        </td>
+                        <td width="30%">
+                            <div>
+
+                                <select name="component_name" id="component_name" [(ngModel)]="MappedComponent[i]"
+                                    (change)="onComponentNameChange($event,i)">
+                                    <option [ngValue]="">--select component--</option>
+                                    <option *ngFor="let component of labTestComponentsData" [ngValue]="component">
+                                        {{component.ComponentName}}
+                                    </option>
+                                </select>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div width="10%">
+                                <input type="text" *ngIf="MappedComponent.length > 0" name="unit" id="unit"
+                                    placeholder="mg/dl" style="text-align: center;"
+                                    [(ngModel)]=" MappedComponent[i].Unit">
+
+                            </div>
+                        </td>
+
+                        <td>
+                            <div>
+                                <input type="text" *ngIf="MappedComponent.length > 0" name="valueType" id="valueType"
+                                    placeholder="number" style="text-align: center;"
+                                    [(ngModel)]=" MappedComponent[i].ValueType">
+                            </div>
+                        </td>
+
+                        <td>
+                            <div>
+                                <input type="text" *ngIf="MappedComponent.length > 0" name="range" id="range"
+                                    placeholder="8.5-10.5" style="text-align: center;"
+                                    [(ngModel)]="MappedComponent[i].Range">
+                            </div>
+                        </td>
+
+                        <td>
+                            <div>
+                                <input type="number" *ngIf="MappedComponent.length > 0" name="dispSequence"
+                                    id="dispSequence" placeholder="1" step="1" style="text-align: center;"
+                                    [(ngModel)]=" MappedComponent[i].DisplaySequence">
+                            </div>
+                        </td>
+
+                        <td>
+                            <div>
+                                <input type="number" *ngIf="MappedComponent.length > 0" name="indent" id="indent"
+                                    placeholder="0" style="text-align: center;"
+                                    [(ngModel)]=" MappedComponent[i].IndentationCount">
+                            </div>
+                        </td>
+
+                        <td>
+                            <div>
+                                <input type="text" *ngIf="MappedComponent.length > 0" name="groupVal" id="groupVal"
+                                    [(ngModel)]="MappedComponent[i].ValueType">
+                            </div>
+                        </td>
+
+                        <td>
+                            <div>
+                                <input type="checkbox" id="sheet" name="sheet">
+                            </div>
+                        </td>
+
+
+                        <td>
+                            <div>
+                                <input type="checkbox" id="active" name="active">
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <br>
+
+        <div class="row">
+            <div class="col">
+                <h5 style="color: #007bff;">Create New Component?</h5>
+
+            </div>
+        </div>
+
+
+        <div class="row" style="margin-left: 970px;">
+            <div class="col-md-12 text-right" style="margin-top: 20px;">
+                <button class="btn btn-primary" (click)="updateLabTest()">Update</button>
+                <button class="btn btn-white" style="margin-left: 10px; color:#007bff; border-color: #007bff;
+            " (click)="closePopup()">Close</button>
+            </div>
+        </div>
+    </div>
