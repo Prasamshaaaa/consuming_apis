@@ -1,0 +1,36 @@
+<h3>Look Ups</h3>
+<hr>
+
+<div id="table-container">
+    <cdk-virtual-scroll-viewport itemSize="20" class="example-viewport">
+        <table>
+            <thead>
+                <tr>
+                    <th> I.</th>
+                    <th>Module...</th>
+                    <th>Look-up Name</th>
+                    <th>Look-up Data</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *cdkVirtualFor="let lookup of LookUps let i = index" class="example-item">
+                    <td> {{i+1}}</td>
+                    <td> {{lookup.ModuleName}}</td>
+                    <td>{{lookup.LookUpName}}</td>
+                    <td>{{lookup.LookupDataJson}}</td>
+                    <td> {{lookup.Description}}</td>
+                    <td>
+                        <button style="margin-right: 10px;" class="btn btn-primary"
+                            (click)="EditLookUpsData(lookup, i)">
+                            Edit </button>
+
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </cdk-virtual-scroll-viewport>
+</div>

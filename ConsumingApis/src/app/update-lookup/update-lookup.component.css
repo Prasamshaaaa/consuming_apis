@@ -1,0 +1,42 @@
+.close-btn {
+    margin-left: 750px;
+    margin-top: 0px;
+    border: 1px solid black;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.update-btn {
+    margin-top: 15px;
+    margin-left: 700px;
+
+}
+
+/* //
+ */
+.container {
+    margin-top: 20px;
+}
+
+.lookup-row {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.lookup-row .col-md-2,
+.lookup-row .col-md-8 {
+    padding: 0;
+}
+
+.lookup-row .col-md-8 input {
+    width: 100%;
+}
+
+.lookup-row button {
+    margin-top: 5px;
+    margin-left: 15px;
+}

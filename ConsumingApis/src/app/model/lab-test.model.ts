@@ -452,3 +452,11 @@ export class SignatoryData {
   SignatoryImageName?: string | null;
 
 }
+
+export class LookUp {
+  LookUpId: number
+  ModuleName: string
+  LookUpName: string
+  LookupDataJson: string
+  Description: any
+}

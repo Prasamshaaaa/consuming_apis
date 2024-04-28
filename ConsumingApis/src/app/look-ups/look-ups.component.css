@@ -1,0 +1,49 @@
+/* Style the table within the virtual scroll container */
+.example-viewport {
+    height: 1000px;
+    /* Set the desired height of the virtual scroll viewport */
+    overflow: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Style the table header */
+thead {
+    background-color: #f2f2f2;
+}
+
+/* Style the table header cells */
+th {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style the table body rows */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Style the table body cells */
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Hover effect on table rows */
+tbody tr:hover {
+    background-color: #ddd;
+}
+
+/* Style the virtual scroll items */
+.example-item {
+    transition: background-color 0.3s ease;
+}
+
+.example-item:hover {
+    background-color: #ddd;
+    /* Add a hover effect on virtual scroll items */
+}

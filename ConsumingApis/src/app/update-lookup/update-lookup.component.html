@@ -1,0 +1,83 @@
+<h3> Update Lookup</h3>
+<span class="close-btn" (click)="ClosePopUp()">x</span>
+
+<hr>
+<div class="row">
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-10">
+                <p>Module Name<span style="color:red">*</span></p>
+            </div>
+            <div class="col">
+                <p>:</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+            <input type="text" name="module_name" id="module_name" [(ngModel)]="UpdatedLookUps.ModuleName">
+
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-10">
+                <p>Look Up Name<span style="color:red">*</span></p>
+            </div>
+            <div class="col">
+                <p>:</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+            <input type="text" name="look_up_name" id="look_up_name" [(ngModel)]="UpdatedLookUps.LookUpName">
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-10">
+                <p>Description<span style="color:red">*</span></p>
+            </div>
+            <div class="col">
+                <p>:</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="row">
+            <input type="text" name="description" id="description" [(ngModel)]="UpdatedLookUps.Description">
+        </div>
+    </div>
+</div>
+
+<br>
+<h3>Look Up Data</h3>
+<div class="container">
+    <div *ngFor="let data of LookUpDataJson; let i = index" class="lookup-row">
+        <div class="row">
+            <div class="col-md-2">
+                <button type="button" class="btn btn-primary" (click)="addRow()">+</button>
+            </div>
+            <div class="col-md-8">
+                <input type="text" class="form-control" name="look_up_name" [(ngModel)]="data">
+            </div>
+            <div class="col-md-2">
+                <button type="button" class="btn btn-danger" (click)="removeRow(i)">X</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<hr>
+<div class="update-btn">
+    <button class="btn btn-primary" (click)="updateLabTest()">Update</button>
+</div>

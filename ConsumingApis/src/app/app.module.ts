@@ -30,6 +30,8 @@ import { ReportTemplateComponent } from './report-template/report-template.compo
 import { UpdateReportTemplateComponent } from './update-report-template/update-report-template.component';
 import { PatientListForFinalReportComponent } from './patient-list-for-final-report/patient-list-for-final-report.component';
 import { ViewPatientDetailsComponent } from './view-patient-details/view-patient-details.component';
+import { LookUpsComponent } from './look-ups/look-ups.component';
+import { UpdateLookupComponent } from './update-lookup/update-lookup.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { ViewPatientDetailsComponent } from './view-patient-details/view-patient
     UpdateReportTemplateComponent,
     PatientListForFinalReportComponent,
     ViewPatientDetailsComponent,
+    LookUpsComponent,
+    UpdateLookupComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,7 +81,7 @@ import { ViewPatientDetailsComponent } from './view-patient-details/view-patient
   bootstrap: [AppComponent],
 
   // For Dialog Box
-  entryComponents: [AddSpecimentDialogComponent, UpdateLabTestsComponent, UpdateReportTemplateComponent, ViewPatientDetailsComponent],
+  entryComponents: [AddSpecimentDialogComponent, UpdateLabTestsComponent, UpdateReportTemplateComponent, ViewPatientDetailsComponent, UpdateLookupComponent],
 
 })
 export class AppModule { }

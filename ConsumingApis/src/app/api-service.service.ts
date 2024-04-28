@@ -4,7 +4,7 @@ import { Observable, Subject } from 'rxjs';
 import { LoginRequest } from './model/login';
 import { environment } from 'src/environments/environment';
 import { ApiResponse } from './shared-kernel/api-response';
-import { LabReport, LabTest, PatientListForFinalReport } from './model/lab-test.model';
+import { LabReport, LabTest, LookUp, PatientListForFinalReport } from './model/lab-test.model';
 import { LabSpecimenData } from './model/lab-specimens';
 import { PriceCategory, Schemes, BillingCreditOrganizations } from './model/billingmaster';
 import { ReportTemplate } from './model/lab-test.model';
@@ -147,6 +147,11 @@ export class ApiServiceService {
 
     return this.http.get<ApiResponse<LabReport>>(url, { headers: this.headers });
 
+  }
+
+  getLabLookUp(): Observable<ApiResponse<LookUp[]>> {
+    const url = `${environment.baseUrl}LabSetting/LabLookupList`;
+    return this.http.get<any>(url, { headers: this.headers });
   }
 
 }

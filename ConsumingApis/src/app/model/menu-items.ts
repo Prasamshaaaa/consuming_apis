@@ -21,6 +21,8 @@ export class ThisIsAClassThatGivesMenuItems {
         menuItems.push(new MenuItems('chat', 'Chat Bot ', 4));
         menuItems.push(new MenuItems('reporttemplate', 'Report Template ', 5));
         menuItems.push(new MenuItems('patientlistforfinalreport', 'Patient List ', 6));
+        menuItems.push(new MenuItems('lookups', 'Look Ups ', 7));
+
 
 
 

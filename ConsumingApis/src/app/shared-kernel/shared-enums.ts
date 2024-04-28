@@ -26,6 +26,7 @@ export enum ENUM_LocaStorageKeys {
     reportTemplate = "reportTemplate",
 
     PatientListForFinalReport = "PatientListForFinalReport",
-    LabReport = "LabReport"
+    LabReport = "LabReport",
+    LookUps = "LookUps"
 }
 

@@ -22,3 +22,13 @@
     width: 80%;
     height: 100px;
 }
+
+.close-btn {
+    margin-left: 1320px;
+    margin-top: 0px;
+    border: 1px solid black;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
