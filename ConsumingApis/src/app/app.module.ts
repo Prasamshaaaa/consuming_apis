@@ -26,6 +26,10 @@ import { Chat1Component } from './chat1/chat1.component';
 import { Chat2Component } from './chat2/chat2.component';
 import { ChatComponent } from './chat/chat.component';
 import { UpdateLabTestsComponent } from './update-lab-tests/update-lab-tests.component';
+import { ReportTemplateComponent } from './report-template/report-template.component';
+import { UpdateReportTemplateComponent } from './update-report-template/update-report-template.component';
+import { PatientListForFinalReportComponent } from './patient-list-for-final-report/patient-list-for-final-report.component';
+import { ViewPatientDetailsComponent } from './view-patient-details/view-patient-details.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +48,10 @@ import { UpdateLabTestsComponent } from './update-lab-tests/update-lab-tests.com
     Chat2Component,
     ChatComponent,
     UpdateLabTestsComponent,
+    ReportTemplateComponent,
+    UpdateReportTemplateComponent,
+    PatientListForFinalReportComponent,
+    ViewPatientDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,7 +77,7 @@ import { UpdateLabTestsComponent } from './update-lab-tests/update-lab-tests.com
   bootstrap: [AppComponent],
 
   // For Dialog Box
-  entryComponents: [AddSpecimentDialogComponent, UpdateLabTestsComponent],
+  entryComponents: [AddSpecimentDialogComponent, UpdateLabTestsComponent, UpdateReportTemplateComponent, ViewPatientDetailsComponent],
 
 })
 export class AppModule { }

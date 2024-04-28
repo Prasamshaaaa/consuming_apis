@@ -12,4 +12,19 @@ export class SchemePriceCategoryComponent implements OnInit {
   ngOnInit() {
   }
 
+
+
 }
+
+abstract class Utils {
+
+  public static pi: number = 3.14;
+
+  public static calculate(radius: number): number {
+    return this.pi * radius;
+  }
+
+}
+
+console.log(Utils.pi);
+console.log(Utils.calculate(2));

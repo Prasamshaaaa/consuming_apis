@@ -1,0 +1,44 @@
+<cdk-virtual-scroll-viewport itemSize="20" class="example-viewport">
+    <table>
+        <thead>
+            <tr>
+                <th>S.N.</th>
+                <th>Hospital...</th>
+                <th>Patient Name</th>
+                <th>Age/...</th>
+                <th>Phone Number</th>
+                <th>Test Name</th>
+                <th>Report Generate</th>
+                <th>Requestin</th>
+                <th>Run No..</th>
+                <th>Bar Code</th>
+                <th>Is...</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *cdkVirtualFor="let patient of PatientListForFinalReport let i = index " class="example-item">
+                <td>{{ i }}</td>
+                <td>{{ patient.PatientCode }}</td>
+                <td>{{ patient.PatientName }}</td>
+                <td>{{ patient.PatientCode }}</td>
+                <td>{{ patient.PhoneNumber }}</td>
+                <td>{{ patient.LabTestCSV }}</td>
+                <td>{{ patient.ReportGeneratedBy }}</td>
+                <td>{{ patient.VisitType}}</td>
+                <td>{{ patient.SampleCodeFormatted}}</td>
+                <td>{{ patient.BarCodeNumber }}</td>
+                <td>{{ patient. IsPrinted }}</td>
+                <td>
+                    <ng-container>
+                        <button style="margin-right: 10px;" class="btn btn-primary"
+                            (click)=" LoadLabReport(patient,i)">View Details</button>
+                        <button style="margin-right: 10px;" class="btn btn-primary">Print</button>
+
+                    </ng-container>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</cdk-virtual-scroll-viewport>

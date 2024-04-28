@@ -19,6 +19,9 @@ export class ThisIsAClassThatGivesMenuItems {
         menuItems.push(new MenuItems('labspecimencomponent', 'Lab Specimen Component', 2));
         menuItems.push(new MenuItems('schemepricecategorycomponent', 'Scheme Price Category ', 3));
         menuItems.push(new MenuItems('chat', 'Chat Bot ', 4));
+        menuItems.push(new MenuItems('reporttemplate', 'Report Template ', 5));
+        menuItems.push(new MenuItems('patientlistforfinalreport', 'Patient List ', 6));
+
 
 
         //You can sort menuItems before returning them.

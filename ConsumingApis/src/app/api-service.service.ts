@@ -4,10 +4,11 @@ import { Observable, Subject } from 'rxjs';
 import { LoginRequest } from './model/login';
 import { environment } from 'src/environments/environment';
 import { ApiResponse } from './shared-kernel/api-response';
-import { LabTest } from './model/lab-test.model';
+import { LabReport, LabTest, PatientListForFinalReport } from './model/lab-test.model';
 import { LabSpecimenData } from './model/lab-specimens';
 import { PriceCategory, Schemes, BillingCreditOrganizations } from './model/billingmaster';
-import { ReportTemplates } from './model/lab-test.model';
+import { ReportTemplate } from './model/lab-test.model';
+import { ENUM_APIResponseStatus } from './shared-kernel/shared-enums';
 
 @Injectable({
   providedIn: 'root'
@@ -79,9 +80,9 @@ export class ApiServiceService {
 
   }
 
-  getReportTemplates(): Observable<ApiResponse<ReportTemplates>> {
+  getReportTemplates(): Observable<ApiResponse<ReportTemplate[]>> {
     const url = `${environment.baseUrl}LabSetting/ReportTemplates`;
-    return this.http.get<ApiResponse<ReportTemplates>>(url, { headers: this.headers });
+    return this.http.get<ApiResponse<ReportTemplate[]>>(url, { headers: this.headers });
   }
 
   getLabLookUpList(): Observable<any> {
@@ -106,7 +107,49 @@ export class ApiServiceService {
   }
 
 
+  getReportTemplateData(): Observable<ApiResponse<ReportTemplate[]>> {
+    const url = `${environment.baseUrl}LabSetting/ReportTemplates`;
+    return this.http.get<ApiResponse<ReportTemplate[]>>(url, { headers: this.headers });
+  }
+
+  updateReportTemplate(data): Observable<ApiResponse<ReportTemplate[]>> {
+    const finalData = JSON.stringify(data);  //application/JSON type ko lai stringify garna pardaina
+    const url = `${environment.baseUrl}LabSetting/LabReportTemplate`;
+    return this.http.put<ApiResponse<ReportTemplate[]>>(url, finalData, this.options);
+  }
+
+  AddReportTemplate(data): Observable<ApiResponse<ReportTemplate[]>> {
+    const finalData = JSON.stringify(data);
+    const url = `${environment.baseUrl}LabSetting/LabReportTemplate`;
+    return this.http.post<ApiResponse<ReportTemplate[]>>(url, finalData, this.options);
+  }
+
+
+  getPatientList(): Observable<ApiResponse<PatientListForFinalReport[]>> {
+
+    const formDate = '2024-01-24';
+    const toDate = '2024-04-24';
+    const categoryIdList = '[1,2,3,4,5,6,7,8,9,10,11,12,13]';
+
+
+    const url = `${environment.baseUrl}Lab/PatientListForFinalReport?FromDate=${formDate}&ToDate=${toDate}&categoryIdList=${categoryIdList}`;
+
+
+    return this.http.get<ApiResponse<PatientListForFinalReport[]>>(url, { headers: this.headers });
+
+
+  }
+
+
+  getLabReport(LabRequisitionIdCSV: number[]): Observable<ApiResponse<LabReport>> {
+
+    const url = `${environment.baseUrl}Lab/LabReportByRequisitionIds?requisitionIdList=[${LabRequisitionIdCSV}]`;
+
+    return this.http.get<ApiResponse<LabReport>>(url, { headers: this.headers });
+
+  }
 
 }
+
 
 

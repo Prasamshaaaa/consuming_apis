@@ -1,0 +1,71 @@
+<button style="margin-right: 10px;" class="btn btn-primary" (click)=" AddReportTemplateData() "> +ADD NEW LAB
+    TEMPLATE </button>
+<br>
+<br>
+<input type="text" [(ngModel)]="searchQuery" placeholder="search">
+<button style="margin-left:1020px;" class="btn btn-primary" (click)="printTable()"> Print </button>
+<br>
+<div *ngIf="!searchQuery" id="table-container">
+    <cdk-virtual-scroll-viewport itemSize="20" class="example-viewport">
+        <table>
+            <thead>
+                <tr>
+                    <th>Report Template Short Name</th>
+                    <th>Template Name</th>
+                    <th>Template Type</th>
+                    <th>Display Sequence</th>
+                    <th>Actions</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *cdkVirtualFor="let template of reportTemplate" class="example-item">
+                    <td>{{template.ReportTemplateShortName}}</td>
+                    <td>{{template.ReportTemplateName}}</td>
+                    <td> {{template.TemplateType}}</td>
+                    <td>{{template.DisplaySequence}}</td>
+                    <td>
+                        <button style="margin-right: 10px;" class="btn btn-primary"
+                            (click)="EditReportTemplateData(template)"> Edit </button>
+                        <button style="margin-right: 10px;" class="btn btn-primary"
+                            (click)="DeactivateReportTemplate(template)">Deactivate</button>
+
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </cdk-virtual-scroll-viewport>
+</div>
+
+<div *ngIf="searchQuery">
+    <cdk-virtual-scroll-viewport itemSize="20" class="example-viewport">
+        <table>
+            <thead>
+                <tr>
+                    <th>Report Template Short Name</th>
+                    <th>Template Name</th>
+                    <th>Template Type</th>
+                    <th>Display Sequence</th>
+                    <th>Actions</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *cdkVirtualFor="let template of FilterTemplates()" class="example-item">
+                    <td>{{template.ReportTemplateShortName}}</td>
+                    <td>{{template.ReportTemplateName}}</td>
+                    <td> {{template.TemplateType}}</td>
+                    <td>{{template.DisplaySequence}}</td>
+                    <td>
+                        <button style="margin-right: 10px;" class="btn btn-primary"
+                            (click)="EditReportTemplateData(template)"> Edit </button>
+                        <button style="margin-right: 10px;" class="btn btn-primary"
+                            (click)="DeactivateReportTemplate(template)">Deactivate</button>
+
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </cdk-virtual-scroll-viewport>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+
+    <div id="printtable">
+
+        <div class="box">
+            <span class="close-btn" (click)="closePopup()">x</span>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <th>Name:</th>
+                                </div>
+                                <div class="col-md-10">
+                                    <td>{{Lookups.PatientName}}</td>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <p> </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <p>
+
+                            </p>
+                        </div>
+
+                        <div class="col-md-5">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <th>Patient No:</th>
+                                </div>
+                                <div class="col-md-7">
+                                    <td>{{Lookups.PhoneNumber}}</td>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <th>Address:</th>
+                                </div>
+                                <div class="col-md-9">
+                                    <td>{{Lookups.Address}}</td>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <p> </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <p>
+
+                            </p>
+                        </div>
+
+                        <div class="col-md-5">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <th>Age/Sex:</th>
+                                </div>
+                                <div class="col-md-7">
+                                    <td>{{Lookups.DOB}}</td>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <th>Prescriber Name:</th>
+                                </div>
+                                <div class="col-md-9">
+                                    <td>{{Lookups.PrescriberName}}</td>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <p> </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <p>
+
+                            </p>
+                        </div>
+
+                        <div class="col-md-5">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <th>Receiving Date:</th>
+                                </div>
+                                <div class="col-md-7">
+                                    <td>{{Lookups.ReceivingDate}}</td>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <th>Collection Site:</th>
+                                </div>
+                                <div class="col-md-9">
+                                    <td>{{Lookups.PatientName}}</td>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <p> </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <p>
+
+                            </p>
+                        </div>
+
+                        <div class="col-md-5">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <th>Testing Date:</th>
+                                </div>
+                                <div class="col-md-7">
+                                    <td>{{Lookups.SampleDate}}</td>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <th>Lab No:</th>
+                                </div>
+                                <div class="col-md-9">
+                                    <td>{{Lookups.SampleCodeFormatted}}</td>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <p> </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <p>
+
+                            </p>
+                        </div>
+
+                        <div class="col-md-5">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <th>Reporting Date:</th>
+                                </div>
+                                <div class="col-md-7">
+                                    <td>{{Lookups.ReportingDate}}</td>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <th>Specimen</th>
+                                </div>
+                                <div class="col-md-9">
+                                    <td>{{Lookups.Specimen}}</td>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <p> </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <p>
+
+                            </p>
+                        </div>
+
+                        <div class="col-md-5">
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="table-box">
+            <div class="row">
+                <div class="col">
+                    <th>Test(s)</th>
+                </div>
+                <div class="col">
+                    <th>Finding(s):</th>
+                </div>
+
+                <div class="col">
+                    <th>Unit:</th>
+                </div>
+                <div class="col">
+                    <th>Ref.Range:</th>
+                </div>
+            </div>
+
+
+            <div class="row" *ngFor="let temp of Template">
+                <div class="row">
+                    <th style="text-align: center; font-size: large;">{{temp.HeaderText}}</th>
+
+                </div>
+
+                <div *ngFor="let test of temp.Tests">
+                    <div class="row" *ngFor="let comp of test.Components">
+
+                        <div class="col">
+                            <td>{{comp.ComponentName}}</td>
+                        </div>
+
+                        <div class="col">
+                            <td>{{comp.Value}}</td>
+                        </div>
+                        <div class="col">
+                            <td>{{comp.Unit}}</td>
+                        </div>
+                        <div class="col">
+                            <td>{{comp.RangeDescription}}</td>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <br>
+        <hr style=" background-color: black; width: 20%; margin-left: 10px;">
+        <div *ngFor="let sign of Signature">
+            <p style="margin-left: 20px; color:black; font-weight: bold;">{{sign.Signature}}</p>
+
+        </div>
+
+    </div>
+
+    <button class="bbbutton">Print Table</button>
+</body>
+
+</html>
+
+<br>
+<br>

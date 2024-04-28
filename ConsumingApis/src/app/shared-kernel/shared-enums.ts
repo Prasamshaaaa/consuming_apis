@@ -21,6 +21,11 @@ export enum ENUM_LocaStorageKeys {
     LabTests = "labTestsData",
     Schemes = "Schemes",
     priceCategories = "priceCategories",
-    billingCreditOrganization = "billingCreditOrganization"
+    billingCreditOrganization = "billingCreditOrganization",
+
+    reportTemplate = "reportTemplate",
+
+    PatientListForFinalReport = "PatientListForFinalReport",
+    LabReport = "LabReport"
 }
 

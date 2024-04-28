@@ -74,7 +74,9 @@
                     <select [(ngModel)]="SelectedLabCategories" name="labCategoriesData" id="labCategoriesData"
                         (change)="UpdateLabCategory()">
                         <option *ngFor="let labCategory of labCategoriesData" [ngValue]="labCategory">
-                            {{labCategory.TestCategoryName}}
+                            {{labCategory.TestCategoryName}} / {{
+                            labCategory.IsDefault? "Value is correct" : labCategory.TestCategoryName
+                            }}
                         </option>
                     </select>
                 </div>
@@ -91,11 +93,14 @@
                         </div>
 
                         <div class="col-md-8">
-                            <select [(ngModel)]="UpdateTest.TemplateType" name="reportTemplatesData"
-                                id="reportTemplatesData">
-                                <option>normal</option>
-                                <option>cyto</option>
-                                <option>histo</option>
+                            <select name="reportTemplatesData" id="reportTemplatesData"
+                                (change)="UpdateTemplateType($event)">
+                                <!-- <option *ngFor="let template of reportTemplatesData" [ngValue]="template">
+                                    {{template.TemplateType}}
+                                </option> -->
+                                <option value="normal">normal</option>
+                                <option value="cyto">cyto</option>
+                                <option value="histo">histo</option>
                             </select>
                         </div>
 
@@ -179,7 +184,9 @@
                                 [(ngModel)]="UpdateTest.IsSMSApplicable" style="margin-right: 5px;">
                         </div>
                         <div class="col-md-9">
-                            <label for="isSMSApplicable">Is SMS Applicable?</label>
+                            <label for="isSMSApplicable"
+                                [style.color]="UpdateTest.IsSMSApplicable ? 'green' : 'initial'">Is SMS
+                                Applicable?></label>
 
                         </div>
                     </div>
@@ -194,7 +201,8 @@
 
                         </div>
                         <div class="col-md-9">
-                            <label for="taxApplicable"> Is Tax Applicable?</label>
+                            <label for="taxApplicable" [style.color]="UpdateTest.IsTaxApplicable ? 'green' : 'initial'">
+                                Is Tax Applicable?</label>
                         </div>
 
                     </div>
@@ -209,7 +217,9 @@
 
                         </div>
                         <div class="col-md-9">
-                            <label for="isLISApplicable">Is LIS Applicable?</label>
+                            <label for="isLISApplicable"
+                                [style.color]="UpdateTest.IsLISApplicable? 'green' : 'initial'">Is LIS Applicable?
+                            </label>
 
                         </div>
                     </div>
@@ -222,8 +232,9 @@
                         </div>
 
                         <div class="col-md-9">
-                            <label for="isOutSourcedTest">Is Outsourced Test?</label>
-
+                            <label for="isOutSourcedTest"
+                                [ngClass]="UpdateTest.IsOutsourceTest ? 'checked-label':'unchecked-label'">Is Outsourced
+                                Test?</label>
                         </div>
 
                     </div>
@@ -239,7 +250,10 @@
 
                         </div>
                         <div class="col-md-9">
-                            <label for="isValidForReporting">Is Valid for Repoting?</label>
+                            <label for="isValidForReporting"
+                                [ngClass]="UpdateTest.IsValidForReporting ? 'checked-label':'unchecked-label'">Is
+                                Valid for
+                                Repoting?</label>
 
                         </div>
                     </div>
@@ -254,7 +268,9 @@
 
                         <div class="col-md-9">
 
-                            <label for="hasNegativeResults">Has Negative Results</label>
+                            <label for="hasNegativeResults"
+                                [style.color]="UpdateTest.HasNegativeResults? 'green' : 'initial'">Has Negative
+                                Results</label>
 
 
                         </div>

@@ -22,6 +22,8 @@ export class UpdateLabTestsComponent implements OnInit {
   SelectedReportTemplate: any;
   SelectedLabCategories: any;
 
+  // SelectedTemplateType: any;
+
   SelectedLabSpecimen: any;
   labTest: LabTest;
 
@@ -211,6 +213,15 @@ export class UpdateLabTestsComponent implements OnInit {
       this.UpdateTest.LabTestComponentMap[index].LabTestComponent = this.MappedComponent[index];
     }
 
+  }
+
+  UpdateTemplateType(event: any) {
+    const selectedTemplateValue = event.target.value;
+    if (selectedTemplateValue) {
+      this.UpdateTest.TemplateType = selectedTemplateValue;
+
+      console.log('Updated Template Type:', this.UpdateTest);
+    }
   }
 
 

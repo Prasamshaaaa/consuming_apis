@@ -10,6 +10,8 @@ import { SchemeComponent } from './scheme/scheme.component';
 import { PriceCategoriesComponent } from './price-categories/price-categories.component';
 import { SchemePriceCategoryComponent } from './scheme-price-category/scheme-price-category.component';
 import { ChatComponent } from './chat/chat.component';
+import { ReportTemplateComponent } from './report-template/report-template.component';
+import { PatientListForFinalReportComponent } from './patient-list-for-final-report/patient-list-for-final-report.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -22,6 +24,8 @@ const routes: Routes = [
       { path: 'labspecimencomponent', component: LabspecimensComponent, canActivate: [AuthGuard] },
       { path: 'schemepricecategorycomponent', component: SchemePriceCategoryComponent, canActivate: [AuthGuard] },
       { path: 'chat', component: ChatComponent, canActivate: [AuthGuard] },
+      { path: 'reporttemplate', component: ReportTemplateComponent, canActivate: [AuthGuard] },
+      { path: 'patientlistforfinalreport', component: PatientListForFinalReportComponent, canActivate: [AuthGuard] },
 
 
     ]
